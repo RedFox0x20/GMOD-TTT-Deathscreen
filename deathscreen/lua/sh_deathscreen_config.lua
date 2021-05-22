@@ -8,10 +8,10 @@ end
 if SERVER then
 	-- Generic prefixes and suffixes in an attempt to minimise class names
 	DeathScreen.WeaponPrefixes = {
-		"weapon_ttt_",
-		"weapon_",
-		"gmod_",
-		"ttt_"
+		[0] = "weapon_ttt_",
+		[1] = "weapon_",
+		[2] = "gmod_",
+		[3] = "ttt_"
 	}
 
 	DeathScreen.WeaponSuffixes = {

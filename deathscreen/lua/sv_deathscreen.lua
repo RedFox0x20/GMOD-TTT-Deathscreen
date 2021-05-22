@@ -25,7 +25,7 @@ function GetWeaponNameMapping(Wep)
 	
 	local startpos, endpos, matchstr = string.find(Wep, "_")
 	if (startpos) then
-		for prefix in DeathScreen.WeaponPrefixes do
+		for _, prefix in pairs(DeathScreen.WeaponPrefixes) do
 			WeaponName = string.Replace(WeaponName, prefix, "")
 			if WeaponName != WeaponName_Orig then
 				break
