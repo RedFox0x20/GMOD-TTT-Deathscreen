@@ -41,7 +41,6 @@ hook.Add("HUDPaint", "Deathscreen_hud",
 
 function ReceivedDeathMessage(len, sv)
 	DeathScreen.DeathMessage = net.ReadString()
-	print("Received deathscreen_msg: " .. tostring(DeathMessage))
 end
 
 net.Receive("Deathscreen_msg", ReceivedDeathMessage)

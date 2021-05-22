@@ -4,6 +4,8 @@
 	hooks
 ]]--
 
+print("sv_deathscreen.lua loaded")
+
 include("sh_deathscreen_config.lua")
 util.AddNetworkString("Deathscreen_msg")
 
@@ -14,6 +16,7 @@ function SendDeathString(ply, str)
 end
 
 function GetWeaponNameMapping(Wep)
+	print("Kill weapon = " .. Wep)
 	if (DeathScreen.WeaponMapping[Wep]) then
 		return DeathScreen.WeaponMapping[Wep]
 	end
@@ -36,7 +39,7 @@ function GetWeaponNameMapping(Wep)
 	startpos, endpos, matchstr = string.find(WeaponName, "_")
 	if (startpos) then
 		WeaponName_Orig = WeaponName
-		for suffix in DeathScreen.WeaponSuffixes do
+		for _, suffix in pairs(DeathScreen.WeaponSuffixes) do
 			WeaponName = string.Replace(WeaponName, suffix, "")
 			if WeaponName != WeaponName_Orig then
 				break
